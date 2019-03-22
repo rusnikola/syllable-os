@@ -1,0 +1,24 @@
+# FileExpander rules v0.7
+# Copyright (c) 2004 Ruslan Nickolaev (nruslan@hotbox.ru)
+# Released under the GNU General Public License 2.0
+#
+# Format:
+# - The first field is a command that will list the contents of the archive
+# - The second field is a command that will extract the contents of the archive
+# - The third field is the mime type for the archive
+# - The last field is the file name extension of the archive type
+#
+# Password mode (optional):
+# - all password switches should be in [...]
+# - password mode is available for both list and extract commands
+
+"unzip -l %s"  "unzip -o -X [-P %s] %s"  "application/x-zip"  ".zip"
+"tar -tvzf %s"  "tar -xvzf %s"  "application/x-gtar"  ".tar.gz"
+"tar -tvjf %s"  "tar -xvjf %s"  "application/x-btar"  ".tar.bz2"
+"tar -tvZf %s"  "tar -xvZf %s"  "application/x-ztar"  ".tar.Z"
+"tar -tvzf %s"  "tar -xvzf %s"  "application/x-gtar"  ".tgz"
+"tar -tvjf %s"  "tar -xvjf %s"  "application/x-btar"  ".tbz"
+"tar -tvf %s"  "tar -xf %s"     "application/x-tar"  ".tar"
+"gzip -l %s"  "unpack-fe -g %s"  "application/x-gzip"  ".gz"
+"basename %s | sed 's/.bz2$//g'"  "unpack-fe -b %s"  "application/x-bzip"  ".bz2"
+"gzip -l %s"  "unpack-fe -Z %s"  "application/x-compress"  ".Z"

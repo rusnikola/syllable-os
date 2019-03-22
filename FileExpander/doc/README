@@ -1,0 +1,35 @@
+-----------------------------------
+FileExpander 0.7
+Copyright (c) 2004 Ruslan Nickolaev
+-----------------------------------
+
+This program is released under the GNU Genral Public License 2.0.
+See file "COPYING" for more detalies
+
+IMPORTANT!
+If you are still using Launcher/LBrowser please take in mind to remove "/system/bin/FileBrowser"
+symbolic link before the Dock package installing (if you are planning to do it).
+Don't forget to reinstall FileExpander after it to register file types associated with FileExpander :)
+
+1. Using MIME types
+If you want to assign MIME type manually please type:
+  addattrib <file> os::MimeType <type>
+for example: addattrib test.zip os::MimeType "application/x-zip"
+Also you can install Dock & registrar package to make your work with file types more easily ;)
+
+2. ftreg program
+This program is developed to register file types during FileExpander installation.
+In fact ftreg is very simple program and not very useful.
+But it can help you if you want to create FileExpander "add-on" package (package that
+allows FileExpander to work with another archive formats) to register new file type properly.
+
+3. How to add new unpacker
+Please edit "/etc/FileExpander.rules" file.
+%s is source path; please make sure that you have only one %s in your rule!
+
+4. How to unpack zip files
+Please install "AFS unzip" package. You can found it at Kamidake software catalog.
+
+5. Contacts
+WWW:	http://nruslan.hotbox.ru
+E-mail:	nruslan@hotbox.ru

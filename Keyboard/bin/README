@@ -1,0 +1,39 @@
+Keyboard Preferences Replacement
+-------------------------------
+
+Copyright (c) 2004 Ruslan Nickolaev (nruslan@hotbox.ru)
+Based on works by Daryl Dudey and Kurt Skuaen
+
+WHAT IT IS
+----------
+This program is developed especially for users that should use more than one keymap.
+Of course it's not real keymap switcher, but can help you if you have two keymaps in use.
+This program generates special hidden file ".dual-keymap" for this purpose.
+
+1. CapsLock should be used for switching between languages.
+2. Switching to upper case letters will be available for both languages by using Shift key.
+
+HOW TO USE
+---------
+1. Normal mode (only one keymap in use, CaspLock works as usual)
+
+	Check box "Use alternate keymap" should be turned off.
+	Set prefer keymap as primary keymap.
+
+2. Dual-keymap mode (two keymaps in use, CapsLock works as switcher between langauges)
+
+	Check box "Use alternate keymap" should be turned on.
+	Set primary and alternate keymaps.
+
+INSTALL
+-------
+Just type ./install.sh and enjoy it :)
+
+BUGS
+----
+Found a bug? Please make sure that it's real bug and than send me a message about it...
+
+CONTACTS
+--------
+E-mail:	nruslan@hotbox.ru
+WWW:	http://nruslan.hotbox.ru

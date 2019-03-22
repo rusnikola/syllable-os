@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# FileExpander unpacking script
+# Copyright (c) 2004 Ruslan Nickolaev
+# Distributes under GNU General Public License 2.0
+
+if test $# != 2; then
+  echo "FileExpander unpacking script"
+  echo "Copyright (c) 2004 Ruslan Nickolaev"
+  echo
+  echo "usage: "$0" [-gbZ] file"
+  echo " -g unpack .gz file"
+  echo " -b unpack .bz2 file"
+  echo " -Z unpack .Z file"
+else
+  if test "$1" = "-b"; then
+    bzip2 -dc "$2" > "`basename "$2" | sed 's/.bz2$//g'`"
+  elif test "$1" = "-g"; then
+    gzip -dc "$2" > "`basename "$2" | sed 's/.gz$//g'`"
+  elif test "$1" = "-Z"; then
+    gzip -dc "$2" > "`basename "$2" | sed 's/.Z$//g'`"
+  else
+    echo "Unknown option!"
+  fi
+fi
